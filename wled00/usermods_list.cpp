@@ -27,6 +27,10 @@
 #include "../usermods/PWM_fan/usermod_PWM_fan.h"
 #endif
 
+#ifdef USERMOD_GOLF
+#include "../usermods/Golf/usermod_golf.h"
+#endif
+
 #ifdef USERMOD_BUZZER
 #include "../usermods/buzzer/usermod_v2_buzzer.h"
 #endif
@@ -143,6 +147,10 @@ void registerUsermods()
 
   #ifdef USERMOD_DALLASTEMPERATURE
   usermods.add(new UsermodTemperature());
+  #endif
+
+  #ifdef USERMOD_GOLF
+  usermods.add(new UsermodGolf());
   #endif
 
   #ifdef USERMOD_SN_PHOTORESISTOR
